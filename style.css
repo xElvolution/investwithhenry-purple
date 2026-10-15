@@ -1,0 +1,62 @@
+:root{--ink:#1a0b2e;--deep:#2e1065;--violet:#5b21b6;--primary:#6d28d9;--lav:#c4b5fd;--lav2:#ede9fe;--white:#fff;--text:#2d2340}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Open Sans",sans-serif;color:var(--text);line-height:1.7;background:#fff}
+h1,h2,h3,h4,h5{font-family:"Fira Sans",sans-serif;line-height:1.25}
+h2{font-size:clamp(1.8rem,3.4vw,2.7rem);color:var(--deep);margin-bottom:.8rem}
+h5{font-size:1.15rem;font-weight:600;color:var(--violet);margin-bottom:1rem}
+p{margin-bottom:1rem}
+img{max-width:100%;display:block}
+a{color:var(--primary)}
+.wrap{max-width:1170px;margin:0 auto;padding:0 24px}
+.sec{padding:90px 0}
+.light{background:var(--lav2)}
+.dark{background:linear-gradient(135deg,var(--ink),var(--deep));color:#e9e3ff}
+.dark h2,.dark h5{color:#fff}.dark h5{color:var(--lav)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.center{text-align:center;max-width:900px;margin:0 auto}
+.btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:700;letter-spacing:.06em;padding:15px 34px;border-radius:999px;margin-top:.6rem;box-shadow:0 10px 30px rgba(109,40,217,.35);transition:transform .25s,box-shadow .25s,background .25s}
+.btn:hover{transform:translateY(-3px);background:var(--violet);box-shadow:0 16px 40px rgba(109,40,217,.45)}
+.dark .btn{background:var(--lav);color:var(--ink)}
+header{position:sticky;top:0;z-index:50;background:rgba(26,11,46,.92);backdrop-filter:blur(10px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+header .logo img{height:46px}
+nav a{color:#fff;text-decoration:none;margin-left:26px;font-weight:600;font-size:.95rem;transition:color .2s}
+nav a:hover{color:var(--lav)}
+nav .login{border:1.5px solid var(--lav);padding:8px 20px;border-radius:999px}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
+.hero{background:var(--ink) url(assets/Home_Banner_2.png) center/cover;position:relative;color:#fff;padding:140px 0 150px}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,11,46,.95),rgba(76,29,149,.55))}
+.hero .wrap{position:relative;max-width:1170px}.hero .in{max-width:620px}
+.hero h2{color:#fff;font-size:clamp(2.2rem,5vw,3.6rem)}.hero h5{color:var(--lav)}
+.tp{margin-top:22px;font-size:.9rem;opacity:.85}.tp a{color:var(--lav)}
+.shot{border-radius:18px;box-shadow:0 30px 60px rgba(46,16,101,.25)}
+.big{font-size:clamp(1.6rem,3vw,2.3rem);color:var(--deep);text-align:center;max-width:900px;margin:0 auto}
+.dark .big{color:#fff}
+ul.ticks{list-style:none;margin:1rem 0}
+ul.ticks li{padding-left:34px;position:relative;margin-bottom:12px}
+ul.ticks li:before{content:"\2713";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--primary);color:#fff;font-size:.75rem;display:grid;place-items:center}
+.videos{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:40px}
+.vid{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;box-shadow:0 20px 40px rgba(46,16,101,.2);background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.social{display:flex;gap:34px;justify-content:center;padding:40px 0}
+.social a{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;color:var(--deep)}
+.social img{height:34px;filter:hue-rotate(40deg)}
+footer{background:var(--ink);color:#cfc4f5;padding:40px 0;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer a{color:#cfc4f5;text-decoration:none;margin-right:18px}footer a:hover{color:#fff}
+footer img{height:40px}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.l{transform:translateX(-50px)}.reveal.r{transform:translateX(50px)}
+.reveal.in{opacity:1;transform:none}
+.hero .in>*{animation:up .9s both}.hero .in>*:nth-child(2){animation-delay:.15s}.hero .in>*:nth-child(3){animation-delay:.3s}.hero .in>*:nth-child(4){animation-delay:.45s}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero .in>*{animation:none}}
+@media (max-width:900px){
+ .grid,.videos{grid-template-columns:1fr;gap:32px}.grid .img-first{order:-1}
+ .sec{padding:60px 0}.hero{padding:90px 0;background-image:url(assets/PHone_Banner.png)}
+ .burger{display:block}
+ nav{display:none;position:absolute;top:78px;left:0;right:0;background:var(--ink);flex-direction:column;padding:16px 24px 24px}
+ nav.open{display:flex}nav a{margin:10px 0}
+ .social{flex-wrap:wrap;gap:20px}
+}
