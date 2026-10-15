@@ -26,7 +26,7 @@ nav a:hover{color:var(--lav)}
 nav .login{border:1.5px solid var(--lav);padding:8px 20px;border-radius:999px}
 .burger{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
 .hero{background:var(--ink) url(assets/Home_Banner_2.png) center/cover;position:relative;color:#fff;padding:140px 0 150px}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,11,46,.95),rgba(76,29,149,.55))}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,11,46,.96) 0%,rgba(46,16,101,.9) 42%,rgba(46,16,101,0) 54%)}
 .hero .wrap{position:relative;max-width:1170px}.hero .in{max-width:620px}
 .hero h2{color:#fff;font-size:clamp(2.2rem,5vw,3.6rem)}.hero h5{color:var(--lav)}
 .tp{margin-top:22px;font-size:.9rem;opacity:.85}.tp a{color:var(--lav)}
@@ -54,9 +54,13 @@ footer img{height:40px}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero .in>*{animation:none}}
 @media (max-width:900px){
  .grid,.videos{grid-template-columns:1fr;gap:32px}.grid .img-first{order:-1}
- .sec{padding:60px 0}.hero{padding:90px 0;background-image:url(assets/PHone_Banner.png)}
+ .sec{padding:60px 0}.hero{padding:56px 0 0;min-height:calc(100vw*840/360 + 280px);background:#e8eef5 url(assets/PHone_Banner.png) bottom center/100% auto no-repeat}.hero:before{background:linear-gradient(180deg,rgba(26,11,46,.97) 0%,rgba(46,16,101,.92) 560px,rgba(46,16,101,0) 640px)}
  .burger{display:block}
  nav{display:none;position:absolute;top:78px;left:0;right:0;background:var(--ink);flex-direction:column;padding:16px 24px 24px}
  nav.open{display:flex}nav a{margin:10px 0}
  .social{flex-wrap:wrap;gap:20px}
 }
+
+.vid button{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:#000 center/cover no-repeat}
+.vid button:after{content:"";position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:rgba(109,40,217,.9) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M8 5v14l11-7z'/%3E%3C/svg%3E") 56% 50%/40px no-repeat;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .25s}
+.vid button:hover:after{transform:scale(1.1)}
